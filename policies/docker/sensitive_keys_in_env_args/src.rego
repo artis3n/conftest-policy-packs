@@ -38,7 +38,7 @@ violation[{"policyId": policyID, "msg": msg}] {
 	not docker_utils.is_a_multistage_build(input, from_val[0])
 
 	# We only care about evaluating 'env' statements that correspond to the final 'from' statement
-	start := from_stmt_indices[minus(count(from_stmt_indices), 1)]
+	start := from_stmt_indices[count(from_stmt_indices) - 1]
 	end := count(input)
 	final_from_slice := array.slice(input, start, end)
 

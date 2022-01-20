@@ -44,7 +44,7 @@ get_latest_lts_version = latest_lts_release {
 
 	# This may be an LTS in the future, not the currently released "latest" LTS version
 	# This would be an even-numbered current release with a start date in the future, when it becomes the LTS release
-	latest_lts := releases[minus(num_releases, 1)]
+	latest_lts := releases[num_releases - 1]
 
 	# e.g. { "codename": "", "end": "2025-04-30", "lts": "2022-10-25", "maintenance": "2023-10-18", "start": "2022-04-19" }
 	release_metadata := output.body[sprintf("v%d", [latest_lts])]
@@ -77,12 +77,12 @@ determine_time_difference_between_today_and_latest_lts(release_metadata) = time_
 	time_diff := today - release_time
 }
 
-determine_current_lts_release(sorted_releases, time_diff) = sorted_releases[minus(count(sorted_releases), 1)] {
+determine_current_lts_release(sorted_releases, time_diff) = sorted_releases[count(sorted_releases) - 1] {
 	# If release time is in the future, use the second-latest LTS, which would be the current LTS version
 	# If time diff is positive, then LTS release comes out in the future
 	# If time diff is negative, then the LTS release came out before this moment
 	time_diff >= 0
-} else = sorted_releases[minus(count(sorted_releases), 2)] {
+} else = sorted_releases[count(sorted_releases) - 2] {
 	true
 }
 
@@ -99,12 +99,15 @@ is_unapproved_node_version(engine_string) {
 	# It will trigger a violation if any version number in the string is outside the acceptable range.
 
 	# List any possible symbols or other characters we don't care about that are valid in the engine string
-	engine_string_no_symbols := strings.replace_n({
-		"<": "",
-		">": "",
-		"=": "",
-		"~": "",
-	}, engine_string)
+	engine_string_no_symbols := strings.replace_n(
+		{
+			"<": "",
+			">": "",
+			"=": "",
+			"~": "",
+		},
+		engine_string,
+	)
 
 	possible_multiple_versions := split(engine_string_no_symbols, " ")
 	numbers_outside_acceptable_range(possible_multiple_versions)
