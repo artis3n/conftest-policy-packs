@@ -1,10 +1,10 @@
 # Conftest Policy Packs
 
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/conftest-policy-packs)](https://artifacthub.io/packages/search?repo=conftest-policy-packs)
-[![Conftest CI](https://github.com/rallyhealth/conftest-policy-packs/actions/workflows/ci.yml/badge.svg)](https://github.com/rallyhealth/conftest-policy-packs/actions/workflows/ci.yml)
+[![Conftest CI](https://github.com/rallyhealth/conftest-policy-packs/actions/workflows/ci.yml/badge.svg)](https://github.com/artis3n/conftest-policy-packs/actions/workflows/ci.yml)
 ![Github Contributors](https://img.shields.io/github/contributors/rallyhealth/conftest-policy-packs)
-![GitHub last commit](https://img.shields.io/github/last-commit/rallyhealth/conftest-policy-packs)
-![GitHub](https://img.shields.io/github/license/rallyhealth/conftest-policy-packs)
+![GitHub last commit](https://img.shields.io/github/last-commit/artis3n/conftest-policy-packs)
+![GitHub](https://img.shields.io/github/license/artis3n/conftest-policy-packs)
 
 Centralized OPA policy workflow for Conftest-based Compliance-as-Code evaluations.
 
@@ -12,6 +12,8 @@ This is a central repository housing a snapshot of Rally Health's Rego policies 
 
 View this project at it's [GitHub Page](https://rallyhealth.github.io/conftest-policy-packs/).
 The policy documentation is available [here](https://rallyhealth.github.io/conftest-policy-packs/docs/policies.html).
+
+This fork's GitHub Page is located [here](https://artis3n.github.io/conftest-policy-packs/) with policy documentation [here](https://artis3n.github.io/conftest-policy-packs/docs/policies.html).
 
 Rally enforces these policies through a homegrown GitHub App running on AWS ECS to evaluate every commit in the organization.
 The GitHub App is an internal wrapper around Conftest, primarily handling reporting the violation results back to developer workflows

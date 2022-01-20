@@ -4,7 +4,7 @@
 install:
 	brew install conftest golang jq pre-commit
 	sh scripts/ci-go-deps.sh
-	pre-commit install
+	pre-commit install --install-hooks
 
 .PHONY: update
 update:

@@ -6,7 +6,7 @@ is_a_multistage_build(baseInput, stage) {
 	val := baseInput[x].Value
 
 	# Last position in FROM declaration is the name for this stage
-	stageName := val[minus(count(val), 1)]
+	stageName := val[count(val) - 1]
 
 	# As long as the position is not the first and only thing
 	# e.g. FROM image:latest
