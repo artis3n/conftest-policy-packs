@@ -2,7 +2,7 @@
 
 .PHONY: install
 install:
-	brew install conftest golang jq pre-commit
+	brew install conftest gcc gcc@5 golang jq pre-commit
 	sh scripts/ci-go-deps.sh
 	pre-commit install --install-hooks
 

@@ -25,7 +25,7 @@ test_publish_config {
 		"scripts": {"test": "jest"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 test_missing_publish_config {
@@ -44,7 +44,7 @@ test_missing_publish_config {
 		"scripts": {"test": "jest"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 test_missing_registry {
@@ -64,7 +64,7 @@ test_missing_registry {
 		"scripts": {"test": "jest"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 test_publish_config_bad_url {
@@ -84,7 +84,7 @@ test_publish_config_bad_url {
 		"scripts": {"test": "jest"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 test_publish_config_no_url {
@@ -104,5 +104,5 @@ test_publish_config_no_url {
 		"scripts": {"test": "jest"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
