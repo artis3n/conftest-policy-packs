@@ -24,7 +24,7 @@ test_org_scope {
 		"scripts": {"test": "jest"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 test_missing_scope {
@@ -43,7 +43,7 @@ test_missing_scope {
 		"scripts": {"test": "jest"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 test_wrong_scope {
@@ -62,5 +62,5 @@ test_wrong_scope {
 		"scripts": {"test": "jest"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }

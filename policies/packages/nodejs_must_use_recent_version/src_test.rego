@@ -13,7 +13,7 @@ test_not_package_json {
 		"name": "something else",
 		"version": "0",
 	}
-		 with data.conftest as {
+		with data.conftest as {
 			"MOCKED": true,
 			"file": {
 				"dir": "/home/testuser/Documents/conftest-policy-packs",
@@ -38,13 +38,13 @@ test_latest_lts {
 		"scripts": {"format": "prettier --write . --list-different"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 test_second_latest_lts {
 	count(violation) == 0 with input as {
 		"author": "",
-		"engines": {"node": ">=14"},
+		"engines": {"node": ">=16"},
 		"bugs": {"url": "https://github.com/rallyhealth/conftest-policy-packs/issues"},
 		"description": "",
 		"homepage": "https://github.com/rallyhealth/conftest-policy-packs",
@@ -57,14 +57,14 @@ test_second_latest_lts {
 		"scripts": {"format": "prettier --write . --list-different"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 # Should be greater than second latest LTS version and older than most recent LTS version
 test_recent_current_version {
 	count(violation) == 0 with input as {
 		"author": "",
-		"engines": {"node": ">=15"},
+		"engines": {"node": ">=17"},
 		"bugs": {"url": "https://github.com/rallyhealth/conftest-policy-packs/issues"},
 		"description": "",
 		"homepage": "https://github.com/rallyhealth/conftest-policy-packs",
@@ -77,7 +77,7 @@ test_recent_current_version {
 		"scripts": {"format": "prettier --write . --list-different"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 # Should be greater than the most recent LTS version
@@ -97,7 +97,7 @@ test_recent_current_version {
 		"scripts": {"format": "prettier --write . --list-different"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 test_old_version {
@@ -116,7 +116,7 @@ test_old_version {
 		"scripts": {"format": "prettier --write . --list-different"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 # Policy failure if no nodejs version requirement is set with the 'engines' key
@@ -135,7 +135,7 @@ test_no_engine_requirement {
 		"scripts": {"format": "prettier --write . --list-different"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 test_complicated_engine_string {
@@ -154,13 +154,13 @@ test_complicated_engine_string {
 		"scripts": {"format": "prettier --write . --list-different"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 test_complicated_engine_string_ok {
 	count(violation) == 0 with input as {
 		"author": "",
-		"engines": {"node": ">=14 <16"},
+		"engines": {"node": ">=16 <18"},
 		"bugs": {"url": "https://github.com/rallyhealth/conftest-policy-packs/issues"},
 		"description": "",
 		"homepage": "https://github.com/rallyhealth/conftest-policy-packs",
@@ -173,7 +173,7 @@ test_complicated_engine_string_ok {
 		"scripts": {"format": "prettier --write . --list-different"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 test_missing_required_minimum {
@@ -192,7 +192,7 @@ test_missing_required_minimum {
 		"scripts": {"format": "prettier --write . --list-different"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 # 2 failures from the policy - number below allowed version and no minimum version
@@ -212,7 +212,7 @@ test_missing_required_minimum {
 		"scripts": {"format": "prettier --write . --list-different"},
 		"version": "1.0.0",
 	}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 # This function successfully mocks the output variable in get_nodejs_releases
@@ -232,7 +232,7 @@ test_mock_nodejs_releases_past {
 		"scripts": {"format": "prettier --write . --list-different"},
 		"version": "1.0.0",
 	}
-		 with get_nodejs_releases as {
+		with get_nodejs_releases as {
 			"MOCKED": true,
 			"body": {
 				"v0.10": {
@@ -283,7 +283,7 @@ test_mock_nodejs_releases_past {
 				},
 			},
 		}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
 
 # This function successfully mocks the output variable in get_nodejs_releases
@@ -303,7 +303,7 @@ test_mock_nodejs_releases_future {
 		"scripts": {"format": "prettier --write . --list-different"},
 		"version": "1.0.0",
 	}
-		 with get_nodejs_releases as {
+		with get_nodejs_releases as {
 			"MOCKED": true,
 			"body": {
 				"v0.10": {
@@ -354,5 +354,5 @@ test_mock_nodejs_releases_future {
 				},
 			},
 		}
-		 with data.conftest as mockConftestData
+		with data.conftest as mockConftestData
 }
