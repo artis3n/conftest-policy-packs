@@ -10,16 +10,16 @@ jobs:
     name: 'Pre-Commit Checks'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3.0.0
 
       # Pre-req for the pre-commit action
-      - uses: actions/setup-python@v2.3.1
+      - uses: actions/setup-python@v3.0.0
         with:
-          python-version: '3.9'
+          python-version: '3.10'
 
-      - uses: actions/setup-go@v2.1.5
+      - uses: actions/setup-go@v3.0.0
         with:
-          go-version: '^1.16'
+          go-version: '^1.18'
       
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -29,7 +29,7 @@ jobs:
       # caching benefits will disappear.
       # In the general case, this cuts ~3 minutes from this job.
       - name: 'Cache Go'
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.1
         with:
           path: |
             ~/.cache/go-build
