@@ -1,8 +1,8 @@
 # Conftest Policy Packs
 
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/conftest-policy-packs)](https://artifacthub.io/packages/search?repo=conftest-policy-packs)
-[![Conftest CI](https://github.com/rallyhealth/conftest-policy-packs/actions/workflows/ci.yml/badge.svg)](https://github.com/artis3n/conftest-policy-packs/actions/workflows/ci.yml)
-![Github Contributors](https://img.shields.io/github/contributors/rallyhealth/conftest-policy-packs)
+[![Conftest CI](https://github.com/artis3n/conftest-policy-packs/actions/workflows/ci.yml/badge.svg)](https://github.com/artis3n/conftest-policy-packs/actions/workflows/ci.yml)
+![Github Contributors](https://img.shields.io/github/contributors/artis3n/conftest-policy-packs)
 ![GitHub last commit](https://img.shields.io/github/last-commit/artis3n/conftest-policy-packs)
 ![GitHub](https://img.shields.io/github/license/artis3n/conftest-policy-packs)
 
